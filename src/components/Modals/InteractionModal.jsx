@@ -38,8 +38,8 @@ export const InteractionModal = ({ position }) => {
   )
 }
 
-export default InteractionModal
-
 InteractionModal.propTypes = {
-  position: PropTypes.number,
+  position: PropTypes.arrayOf(PropTypes.number).isRequired, // Cambiado a array de números
 }
+
+export default InteractionModal

@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react'
 import Sound from '../assets/svg/sound.svg'
 import NoSound from '../assets/svg/no_sound.svg'
-import YoshiMusic from '../assets/sounds/Music_yoshi.mp4'
+import YoshiMusic from '../assets/sounds/Music_yoshi.mp3'
 import './AmbientMusic.css' // Importamos el CSS
 
 export const AmbientMusic = () => {
@@ -11,6 +11,9 @@ export const AmbientMusic = () => {
 
   const toggleMute = () => {
     if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.play() // Reproduce el audio si está pausado
+      }
       audioRef.current.muted = !isMuted
       setIsMuted(!isMuted)
     }
