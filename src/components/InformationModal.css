@@ -1,0 +1,24 @@
+/* src/components/AmbientMusic.css */
+
+.information-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Tamaño del círculo */
+  height: 60px;
+  background-color: white; /* Fondo blanco */
+  border-radius: 50%; /* Hacerlo circular */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.information-toggle:hover {
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+  background-color: #e0e0e0; /* Cambio de color en hover */
+}
+
+.information-toggle img {
+  width: 50%;
+  height: 50%;
+}
