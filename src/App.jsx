@@ -1,10 +1,50 @@
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import { SpherePage } from './components/SpherePage'
+import { InteractivePoint } from './components/InteractivePoint'
+
+import * as THREE from 'three'
+import { useState } from 'react'
 import './App.css'
 
-function App() {
+import { Modal } from './components/Modal'
+
+const App = () => {
+  const [openModal, setOpenModal] = useState(false)
+
+  const handleOpenModal = () => {
+    setOpenModal(true)
+  }
   return (
-    <>
-      <p>Hola</p>
-    </>
+    <div className="app-container">
+      {/* Botones en la pantalla */}
+      <div className="ui-buttons">
+        <button onClick={() => setOpenModal(true)}>Bienvenido</button>
+        <button onClick={() => console.log('Musica')}>Música</button>
+        <button onClick={handleOpenModal}>Abrir modal</button>
+      </div>
+
+      {/* Botón para abrir el modal */}
+
+      {/* Modal */}
+      {openModal && <Modal setOpenModal={setOpenModal} />}
+      {/* Lienzo 3D */}
+      <Canvas>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <SpherePage />
+        <InteractivePoint position={[90, 10, 10]} />
+        <OrbitControls
+          enablePan={false}
+          minDistance={90}
+          maxDistance={110}
+          mouseButtons={{
+            LEFT: THREE.MOUSE.ROTATE,
+            RIGHT: null,
+          }}
+        />
+      </Canvas>
+    </div>
   )
 }
 
