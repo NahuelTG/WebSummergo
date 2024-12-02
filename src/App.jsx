@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { SpherePage } from './components/SpherePage'
-import { InteractivePoint } from './components/InteractivePoint'
+import { InteractionModal } from './components/Modals/InteractionModal.jsx'
 
 import * as THREE from 'three'
 import { useState } from 'react'
@@ -30,7 +30,7 @@ const App = () => {
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <SpherePage />
 
-        <InteractivePoint position={[90, 10, 10]} />
+        <InteractionModal position={[90, 10, 10]} />
         <OrbitControls
           enablePan={false}
           minDistance={90}

@@ -1,0 +1,19 @@
+.svg-icon {
+  width: 50px; /* Ajusta el tamaño del SVG */
+  height: auto;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Suaviza la transformación al entrar/salir del hover */
+}
+
+.svg-icon:hover {
+  transform: scale(1.2); /* Crece al pasar el mouse */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
